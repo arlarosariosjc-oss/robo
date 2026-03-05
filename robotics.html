@@ -3,96 +3,106 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Netflix Replica</title>
+<title>MemeHub</title>
 
 <style>
 
 body{
     margin:0;
-    font-family: Arial, Helvetica, sans-serif;
-    background:black;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#111;
     color:white;
 }
 
+/* NAVBAR */
+
 header{
+    background:#000;
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    padding:20px 50px;
-    position:absolute;
-    width:100%;
+    justify-content:space-between;
+    padding:12px 25px;
+    position:sticky;
+    top:0;
 }
 
 .logo{
-    color:red;
-    font-size:32px;
+    font-size:24px;
     font-weight:bold;
 }
 
-.signin{
-    background:red;
-    border:none;
-    color:white;
-    padding:8px 16px;
+.logo span{
+    background:#ff9900;
+    padding:4px 8px;
     border-radius:4px;
-    cursor:pointer;
+    color:black;
 }
 
-.hero{
-    height:90vh;
-    background:url("https://images.unsplash.com/photo-1489599849927-2ee91cede3ba") center/cover no-repeat;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
+.search{
+    width:40%;
 }
 
-.hero h1{
-    font-size:50px;
-}
-
-.hero p{
-    font-size:20px;
-}
-
-.hero button{
-    background:red;
-    border:none;
-    padding:12px 25px;
-    font-size:18px;
-    color:white;
-    border-radius:4px;
-    cursor:pointer;
-}
-
-.movies{
-    padding:20px 50px;
-}
-
-.row{
-    display:flex;
-    gap:15px;
-    overflow-x:auto;
-}
-
-.movie{
-    min-width:200px;
-}
-
-.movie img{
+.search input{
     width:100%;
-    border-radius:5px;
-    transition:0.3s;
+    padding:8px;
+    border-radius:4px;
+    border:none;
 }
 
-.movie img:hover{
-    transform:scale(1.1);
+/* VIDEO GRID */
+
+.container{
+    padding:20px;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#1a1a1a;
+    border-radius:8px;
+    overflow:hidden;
+    transition:0.25s;
+}
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+.card img{
+    width:100%;
+}
+
+.card h3{
+    padding:10px;
+    font-size:16px;
+}
+
+.card p{
+    padding:0 10px 10px 10px;
+    font-size:13px;
+    color:#aaa;
+}
+
+/* VIDEO PLAYER */
+
+.player{
+    max-width:900px;
+    margin:40px auto;
+}
+
+video{
+    width:100%;
+    border-radius:8px;
 }
 
 footer{
     text-align:center;
     padding:20px;
-    color:gray;
+    color:#777;
 }
 
 </style>
@@ -101,46 +111,59 @@ footer{
 <body>
 
 <header>
-<div class="logo">NETFLIX</div>
-<button class="signin">Sign In</button>
+<div class="logo">Meme<span>Hub</span></div>
+
+<div class="search">
+<input type="text" placeholder="Search funny videos...">
+</div>
 </header>
 
-<div class="hero">
-<div>
-<h1>Unlimited movies, TV shows, and more.</h1>
-<p>Watch anywhere. Cancel anytime.</p>
-<button>Get Started</button>
-</div>
-</div>
+<div class="container">
 
-<section class="movies">
+<h2>🔥 Trending Memes</h2>
 
-<h2>Trending Now</h2>
-<div class="row">
+<div class="grid">
 
-<div class="movie"><img src="https://via.placeholder.com/200x300"></div>
-<div class="movie"><img src="https://via.placeholder.com/200x300"></div>
-<div class="movie"><img src="https://via.placeholder.com/200x300"></div>
-<div class="movie"><img src="https://via.placeholder.com/200x300"></div>
-<div class="movie"><img src="https://via.placeholder.com/200x300"></div>
-
+<div class="card">
+<img src="https://picsum.photos/400/220?1">
+<h3>When the code works on first try</h3>
+<p>Views: 2M • Category: Programming</p>
 </div>
 
-<h2>Popular</h2>
-<div class="row">
+<div class="card">
+<img src="https://picsum.photos/400/220?2">
+<h3>Cat judges your life choices</h3>
+<p>Views: 800K • Category: Animals</p>
+</div>
 
-<div class="movie"><img src="https://via.placeholder.com/200x300"></div>
-<div class="movie"><img src="https://via.placeholder.com/200x300"></div>
-<div class="movie"><img src="https://via.placeholder.com/200x300"></div>
-<div class="movie"><img src="https://via.placeholder.com/200x300"></div>
-<div class="movie"><img src="https://via.placeholder.com/200x300"></div>
+<div class="card">
+<img src="https://picsum.photos/400/220?3">
+<h3>POV: Monday morning alarm</h3>
+<p>Views: 1.4M • Category: Relatable</p>
+</div>
+
+<div class="card">
+<img src="https://picsum.photos/400/220?4">
+<h3>Programmer vs Bug</h3>
+<p>Views: 950K • Category: Tech</p>
+</div>
 
 </div>
 
-</section>
+</div>
+
+<div class="player">
+
+<h2>Featured Video</h2>
+
+<video controls>
+<source src="sample.mp4" type="video/mp4">
+</video>
+
+</div>
 
 <footer>
-<p>Netflix Replica UI - Demo</p>
+© 2026 MemeHub — The internet's most questionable memes 😎
 </footer>
 
 </body>
